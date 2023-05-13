@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null; 
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        A
+
+        <!-- Single statement blocks  -->
+        @{ var total = 7; }
+        @{ var myMessage = "Hello World"; }
+
+
+        <!-- Inline expressions -->
+        <p>The value of your account is: @total </p>
+        <p>The value of myMessage is: @myMessage</p>
+
+
+        <!-- Multi-statement block -->
+        @{
+            var greeting = "Welcome to our site!";
+            var weekDay = DateTime.Now.DayOfWeek;
+            var greetingMessage = greeting + " Today is: " + weekDay;
+        }
+        <p>The greeting is: @greetingMessage</p>
+
+
+        @{
+            var result = "";
+            if (IsPost)
+            {
+                result = "This page was posted using the Submit button.";
+            }
+            else
+            {
+                result = "This was the first request for this page.";
+            }
+        }
+        <form method="POST" action="">
+            <input type="Submit" name="Submit" value="Submit" />
+            <p>@result</p>
+        </form>
+
+
+    </div>
+</body>
+</html>

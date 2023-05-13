@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>學生新增</title>
+</head>
+<body>
+    <form method="post" action="@Url.Action("Create")">
+        <h3>學生新增作業</h3>
+        <div>
+            <p>
+                編號：<input type="text" name="Sno" id="Sno"
+                          value="@ViewBag.Sno" required />
+            </p>
+            <p>
+                姓名：<input type="text" name="Sname" id="Sname"
+                          value="@ViewBag.Sname" required />
+            </p>
+            <p><input type="submit" value="新增" /></p>
+            <hr />
+            @{
+                if (ViewBag.Sno != null && ViewBag.Sname != null)
+                {
+                    <p>完成新增學生資料</p>
+                    <p>
+                        編號：@ViewBag.Sno <br>
+                        品名：@ViewBag.Sname |
+                    </p>
+                }
+            }
+        </div>
+    </form>
+
+
+</body>
+</html>
+
